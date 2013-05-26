@@ -3,12 +3,11 @@
 #
 #  XChat-DeaDBeeF.py  -  XChat plugin for DeaDBeeF integration
 #
-#  Copyright (C) 2013 iceTwy <nerorush23@gmail.com>
 #
 #            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 #                     Version 2, December 2004
 #
-#  Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+#  Copyright (C) 2013 iceTwy <nerorush23@gmail.com>
 #
 #  Everyone is permitted to copy and distribute verbatim or modified
 #  copies of this license document, and changing it is allowed as long

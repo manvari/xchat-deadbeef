@@ -30,13 +30,14 @@ __module_maintainer__ = "iceTwy"
 __module_email__ = "nerorush23@gmail.com"
 __module_status__ = "Released"
 
-###########################
-import xchat
-import os
-import subprocess
-from threading import Thread
-from time import sleep
-###########################
+############################
+import xchat                 
+import os                    
+import subprocess            
+
+from threading import Thread 
+from time import sleep      
+############################
 
 def call_deadbeef():
 	sleep(5)

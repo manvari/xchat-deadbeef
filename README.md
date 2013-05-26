@@ -1,8 +1,7 @@
 # XChat-DeaDBeeF
 XChat-DeaDBeeF is a Python plugin for XChat that integrates the well-known DeaDBeeF music player into XChat.
-It was developed in late 2011 and came back to life in May 2013.
+It was initially developed in late 2011 and came back to life in May 2013.
 
-==============
 ###  How does it work?
 
 XChat-DeaDBeeF adds a few commands that can be typed into the XChat text box at any moment.

@@ -18,7 +18,7 @@
 #
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 #
-#
+
 
 __module_name__ = "XChat-DeaDBeeF"
 __module_description__ = "DeaDBeeF integration in XChat."
@@ -29,6 +29,8 @@ __module_license__ = "WTFPL"
 __module_maintainer__ = "iceTwy"
 __module_email__ = "nerorush23@gmail.com"
 __module_status__ = "Released"
+__module_deadbeef_version__ = "0.5.6"
+__module_xchat_version__ = "2.8.8"
 
 ############################
 import xchat                 
@@ -38,6 +40,20 @@ import subprocess
 from threading import Thread 
 from time import sleep      
 ############################
+
+def check_xchat_version():
+	read_version = os.popen('xchat --version').read()
+	if __module_xchat_version__ in read_version:
+		pass
+	else:
+		print "Your XChat version is outdated.\nPlease upgrade to XChat %s!" % __module_xchat_version__
+
+def check_deadbeef_version():
+	read_version = os.popen('deadbeef --version').read()
+	if __module_deadbeef_version__ in read_version:
+		pass
+	else:
+		print "Your DeaDBeeF version is outdated.\nPlease upgrade to DeaDBeeF %s!" % __module_deadbeef_version__
 
 def call_deadbeef():
 	sleep(5)
@@ -106,7 +122,10 @@ def deadbeef_stop_song(word, word_eol, userdata):
 	
 if __name__ == '__main__':
 	
+	check_xchat_version()
 	is_deadbeef_running()
+	check_deadbeef_version()
+	
 	
 #Display the current track (chose one)
 	#xchat.hook_command('currentsong',deadbeef_current_song) 

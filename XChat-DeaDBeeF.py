@@ -127,7 +127,7 @@ if __name__ == '__main__':
 	check_deadbeef_version()
 	
 #Launch DeaDBeeF
-    xchat.hook_command('deadbeef',call_deadbeef)
+	xchat.hook_command('deadbeef',call_deadbeef)
     
 #Display the current track (chose one)
 	#xchat.hook_command('currentsong',deadbeef_current_song) 

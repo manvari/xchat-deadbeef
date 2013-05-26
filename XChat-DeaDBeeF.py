@@ -72,15 +72,17 @@ def deadbeef_next_song(word, word_eol, userdata):
 	is_deadbeef_running()
 	os.system("deadbeef --next")
 	print "Next track loaded!"
-	read_song = os.popen('deadbeef --nowplaying "%a - %t - %b% (%y) // %@:BITRATE@kbps"').read().strip()
+	sleep(0.001) # DeaDBeeF shows the initial track if isn't given some time to update
+	read_song = os.popen('deadbeef --nowplaying "%t by %a - from %b (%y)"').read()
 	print "You are listening to: %s" % str(read_song)
 	return xchat.EAT_ALL
  
 def deadbeef_previous_song(word, word_eol, userdata):
 	is_deadbeef_running()
-	print "Previous track loaded!"
 	os.system("deadbeef --prev")
-	read_song = os.popen('deadbeef --nowplaying "%a - %t - %b% (%y) // %@:BITRATE@kbps"').read().strip()
+	print "Previous track loaded!"
+	sleep(0.001) # DeaDBeeF shows the initial track if isn't given some time to update 
+	read_song = os.popen('deadbeef --nowplaying "%t by %a - from %b% (%y)"').read()
 	print "You are listening to: %s" % str(read_song)
 	return xchat.EAT_ALL
  

@@ -34,6 +34,8 @@ Clone the Git repository to any folder, then move **XChat-DeaDBeeF.py** to **$HO
 
 This will automatically load XChat-DeaDBeeF when XChat is launched.
 
+*Note: the plugin can also be (re)launched via Window > Plugins and scripts... > Load... > destination.*
+
 ### To-Do list
 
 Refer to [this page](https://github.com/iceTwy/xchat-deadbeef/blob/master/TODO.md "TO-DO List").

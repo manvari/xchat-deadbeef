@@ -108,12 +108,19 @@ if __name__ == '__main__':
 	
 	is_deadbeef_running()
 	
-	xchat.hook_command('currentsong',deadbeef_current_song) 
-	xchat.hook_command('nextsong',deadbeef_next_song)
-	xchat.hook_command('prevsong',deadbeef_previous_song)
+#Display the current track (chose one)
+	#xchat.hook_command('currentsong',deadbeef_current_song) 
+	#xchat.hook_command('nowplaying',deadbeef_current_song)
+	xchat.hook_command('np',deadbeef_current_song)
+
+#Play, pause, stop track
 	xchat.hook_command('playsong',deadbeef_play_song)
 	xchat.hook_command('pausesong',deadbeef_pause_song)
 	xchat.hook_command('stopsong',deadbeef_stop_song)
+	
+#Skip to next or previous song	
+	xchat.hook_command('nextsong',deadbeef_next_song)
+	xchat.hook_command('prevsong',deadbeef_previous_song)
 	
 	print "XChat-DeaDBeeF %s plugin loaded successfully! - by %s" % (__module_version__,__module_author__)
 	print "Protip: use /playsong to play a song or resume playback (if paused)."

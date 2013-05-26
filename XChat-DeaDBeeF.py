@@ -57,7 +57,7 @@ def check_deadbeef_version():
 
 def call_deadbeef():
 	sleep(5)
-	print "DeadBeeF lauched!"
+	print "DeadBeeF launched!"
 	subprocess.call("deadbeef")
 
 def is_deadbeef_running():

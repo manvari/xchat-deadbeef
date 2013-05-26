@@ -18,7 +18,7 @@
 #
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 #
-
+#
 
 __module_name__ = "XChat-DeaDBeeF"
 __module_description__ = "DeaDBeeF integration in XChat."
@@ -125,7 +125,6 @@ if __name__ == '__main__':
 	check_xchat_version()
 	is_deadbeef_running()
 	check_deadbeef_version()
-	
 	
 #Display the current track (chose one)
 	#xchat.hook_command('currentsong',deadbeef_current_song) 

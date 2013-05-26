@@ -1,12 +1,10 @@
 # XChat-DeaDBeeF
 ==============
-
-
 XChat-DeaDBeeF is a Python plugin for XChat that integrates the well-known DeaDBeeF music player into XChat.
 It was developed in late 2011 and came back to life in May 2013.
 
 ==============
-##  How does it work?
+###  How does it work?
 
 XChat-DeaDBeeF adds a few commands that can be typed into the XChat text box at any moment.
 
@@ -17,7 +15,7 @@ Commands:
 * **/playpausesong** - plays, pauses or resumes playback (if paused).
 * **/stopsong** - stops current song.
 
-## Requirements
+### Requirements
 
 Obvious programs are required:
 
@@ -29,7 +27,7 @@ Your distribution should propose packages for those programs; install them norma
 
 If not, compile and install them from scratch.
 
-## Installation
+### Installation
 
 Installing XChat-DeaDBeeF is pretty straightforward.
 
@@ -37,7 +35,7 @@ Clone the Git repository to any folder, then move **XChat-DeaDBeeF.py** to **$HO
 
 This will automatically load XChat-DeaDBeeF when XChat is launched.
 
-## Contribution
+### Contribution
 
 You are welcome to modify the plugin and add some new features!
 

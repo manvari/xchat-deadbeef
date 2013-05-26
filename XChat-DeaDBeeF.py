@@ -46,14 +46,14 @@ def check_xchat_version():
 	if __module_xchat_version__ in read_version:
 		pass
 	else:
-		print "Your XChat version is outdated.\nPlease upgrade to XChat %s!" % __module_xchat_version__
+		print "Your XChat version is outdated.\nPlease update to XChat %s!" % __module_xchat_version__
 
 def check_deadbeef_version():
 	read_version = os.popen('deadbeef --version').read()
 	if __module_deadbeef_version__ in read_version:
 		pass
 	else:
-		print "Your DeaDBeeF version is outdated.\nPlease upgrade to DeaDBeeF %s!" % __module_deadbeef_version__
+		print "Your DeaDBeeF version is outdated.\nPlease update to DeaDBeeF %s!" % __module_deadbeef_version__
 
 def call_deadbeef():
 	sleep(5)

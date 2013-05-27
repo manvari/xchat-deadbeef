@@ -1,10 +1,10 @@
 # XChat-DeaDBeeF
-XChat-DeaDBeeF is a Python plugin for XChat that integrates the well-known DeaDBeeF music player into XChat.
+XChat-DeaDBeeF is a Python plugin for XChat and HexChat. It implements commands to control the DeaDBeeF music player, directly from the text box.
 It was initially developed in late 2011 and came back to life in May 2013.
 
 ###  How does it work?
 
-XChat-DeaDBeeF adds a few commands that can be typed into the XChat text box at any moment.
+XChat-DeaDBeeF implements a few commands that can be typed into the text box at any moment. 
 
 Commands:
 
@@ -20,10 +20,13 @@ Commands:
 Obvious programs are required:
 
 * [Python 2.7.x](http://www.python.org/getit/ "Download Python") (or 2.6.x)
-* [XChat IRC for Linux](http://sourceforge.net/projects/xchat/files/ "X-Chat - Browse Files at SourceForge.net") (2.8.8)
-* [DeaDBeeF 0.5.x](http://deadbeef.sourceforge.net/download.html "DeaDBeeF - Ultimate Music Player For GNU/Linux")
+* [DeaDBeeF 0.5.x](http://deadbeef.sourceforge.net/download.html "DeaDBeeF - Ultimate Music Player For GNU/Linu
 
-Your distribution should propose packages for those programs; install them normally with your package manager. 
+* [XChat](http://sourceforge.net/projects/xchat/files/ "X-Chat - Browse Files at SourceForge.net") or [HexChat](http://hexchat.org/downloads.html "Downloads - HexChat")
+
+*Note: XChat is no longer actively developed. HexChat has taken over and receives regular updates.
+
+Your distribution should propose packages for all of those programs; install them normally with your package manager.
 
 If not, compile and install them from scratch.
 
@@ -31,11 +34,19 @@ If not, compile and install them from scratch.
 
 Installing XChat-DeaDBeeF is pretty straightforward.
 
+* For XChat:
+: 1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
+: 2. Move **XChat-DeaDBeeF.py** to **$HOME/.xchat2** (which contains all of your XChat plugins).
+: XChat-DeaDBeeF will now be automatically loaded upon launching XChat.
+
+* For HexChat:
+: 1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
+: 2. Move **XChat-DeaDBeeF.py** to **~/.config/hexchat** (which contains all of your HexChat plugins).
+: XChat-DeaDBeeF will now be automatically loaded upon launching HexChat.
+
 Clone the Git repository to any folder, then move **XChat-DeaDBeeF.py** to **$HOME/.xchat2**.
 
-This will automatically load XChat-DeaDBeeF when XChat is launched.
-
-*Note: the plugin can also be (re)launched via Window > Plugins and scripts... > Load... > destination.*
+*Note: if necessary, the plugin can also be (re)launched via Window > Plugins and scripts... > Load... > plugin location.*
 
 ### To-Do list
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 #
-#  XChat-DeaDBeeF  -  XChat plugin for DeaDBeeF integration
+#  XChat-DeaDBeeF  -  XChat/HexChat script for DeaDBeeF integration
 #
 #
 #            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
@@ -67,7 +67,6 @@ def call_deadbeef_script():
 	sleep(5) # Execute 5s later to avoid bothering the user when XChat/HexChat launches.
 	print "DeadBeeF launched!"
 	execute_deadbeef()
-	return xchat.EAT_EAT_ALL
 
 def is_deadbeef_running(): 
 	runningornot = os.popen("ps -e | grep deadbeef-main").read()
@@ -77,15 +76,13 @@ def is_deadbeef_running():
 		call_deadbeef_thread.start()
 	else:
 		pass
-	return xchat.EAT_ALL
 			
 def is_song_loaded():
 	loadedornot = os.popen("deadbeef --nowplaying %e").read()
 	if "nothing" in loadedornot:
 		print "Track loaded!"
 	else:
-		print "Track resumed!"
-	return xchat.EAT_ALL
+		print "Track resumed/reset!"
 
 def deadbeef_current_song(word, word_eol, userdata):
 	is_deadbeef_running()
@@ -155,4 +152,4 @@ if __name__ == '__main__':
 	xchat.hook_command('prevsong',deadbeef_previous_song)
 	
 	print "XChat-DeaDBeeF %s plugin loaded successfully! - by %s" % (__module_version__,__module_author__)
-	print "Protip: use /playsong to play a song or resume playback (if paused)."
+	print "Protip: using /playsong when the track is playing resets the track."

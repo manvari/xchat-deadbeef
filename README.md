@@ -1,5 +1,5 @@
 # XChat-DeaDBeeF
-XChat-DeaDBeeF is a Python plugin for XChat and HexChat. It implements commands to control the DeaDBeeF music player, directly from the text box.
+XChat-DeaDBeeF is a Python script for XChat and HexChat. It implements commands to control the DeaDBeeF music player, directly from the text box.
 It was initially developed in late 2011 and came back to life in May 2013.
 
 ###  How does it work?
@@ -35,15 +35,15 @@ Installing XChat-DeaDBeeF is pretty straightforward.
 
 * For XChat:
     1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
-    2. Move **XChat-DeaDBeeF.py** to **$HOME/.xchat2/** (which contains all of your XChat plugins).
+    2. Move **XChat-DeaDBeeF.py** to **$HOME/.xchat2/** (which contains all of your XChat addons).
 
 * For HexChat:
     1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
-    2. Move **XChat-DeaDBeeF.py** to **~/.config/hexchat/addons/** (which contains all of your HexChat plugins).
+    2. Move **XChat-DeaDBeeF.py** to **~/.config/hexchat/addons/** (which contains all of your HexChat addons).
 
 XChat-DeaDBeeF will now be automatically loaded upon launching XChat/HexChat.
 
-_Note: if necessary, the plugin can also be (re)launched via Window > Plugins and scripts... > Load... > plugin location._
+_Note: if necessary, XChat-DeaDBeeF can also be (re)loaded via Window > Plugins and scripts... > Load... > /path/to/XChat-DeaDBeeF.py._
 
 ### To-Do list
 
@@ -51,7 +51,7 @@ Refer to [this page](https://github.com/iceTwy/xchat-deadbeef/blob/master/TODO.m
 
 ### Contribution
 
-You are welcome to modify the plugin and add some new features!
+You are welcome to modify the script and add some new features!
 
 To contribute, please fork the project, make your changes on branch, then submit a Pull Request. 
 

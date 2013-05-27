@@ -23,7 +23,7 @@ Obvious programs are required:
 * [DeaDBeeF 0.5.x](http://deadbeef.sourceforge.net/download.html "DeaDBeeF - Ultimate Music Player For GNU/Linux")
 * [XChat](http://sourceforge.net/projects/xchat/files/ "X-Chat - Browse Files at SourceForge.net") or [HexChat](http://hexchat.org/downloads.html "Downloads - HexChat") for Linux
 
-*Note: XChat is no longer actively developed. HexChat, one of its fork, is now the main project and receives regular updates.
+*Note: XChat is no longer being actively developed. HexChat, one of its fork, is now the main project and receives regular updates.
 
 Your distribution should propose packages for all of those programs; install them normally with your package manager.
 
@@ -35,12 +35,10 @@ Installing XChat-DeaDBeeF is pretty straightforward.
 
 * For XChat:
     1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
-
     2. Move **XChat-DeaDBeeF.py** to **$HOME/.xchat2** (which contains all of your XChat plugins).
 
 * For HexChat:
     1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
-
     2. Move **XChat-DeaDBeeF.py** to **~/.config/hexchat** (which contains all of your HexChat plugins).
 
 XChat-DeaDBeeF will now be automatically loaded upon launching XChat/HexChat.

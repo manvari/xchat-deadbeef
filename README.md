@@ -35,11 +35,11 @@ Installing XChat-DeaDBeeF is pretty straightforward.
 
 * For XChat:
     1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
-    2. Move **XChat-DeaDBeeF.py** to **$HOME/.xchat2** (which contains all of your XChat plugins).
+    2. Move **XChat-DeaDBeeF.py** to **$HOME/.xchat2/** (which contains all of your XChat plugins).
 
 * For HexChat:
     1. Clone the Git repository to any folder (or, alternatively, download the source tarball).
-    2. Move **XChat-DeaDBeeF.py** to **~/.config/hexchat** (which contains all of your HexChat plugins).
+    2. Move **XChat-DeaDBeeF.py** to **~/.config/hexchat/addons/** (which contains all of your HexChat plugins).
 
 XChat-DeaDBeeF will now be automatically loaded upon launching XChat/HexChat.
 

@@ -43,7 +43,7 @@ Installing XChat-DeaDBeeF is pretty straightforward.
 
 XChat-DeaDBeeF will now be automatically loaded upon launching XChat/HexChat.
 
-_Note: if necessary, the plugin can also be (re)launched via Window > Plugins and scripts... > Load... > plugin location.*
+_Note: if necessary, the plugin can also be (re)launched via Window > Plugins and scripts... > Load... > plugin location._
 
 ### To-Do list
 

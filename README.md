@@ -10,10 +10,10 @@ Commands:
 
 * **/deadbeef** - launches DeaDBeeF
 * **/np** - displays current track in channel
-* **/nextsong**, **/prevsong** - loads next/previous track in playlist
-* **/playsong** - plays track or resumes playback (if paused)
-* **/pausesong** - pauses track
-* **/stopsong** - stops current track
+* **/dbplay** - loads track or resumes playback (if paused)
+* **/dbpause** - pauses current track
+* **/dbnext**, **/dbprev** - loads next/previous track in playlist
+* **/dbstop** - stops current track
 
 ### Requirements
 

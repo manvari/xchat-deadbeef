@@ -53,7 +53,7 @@ Refer to [this page](https://github.com/iceTwy/xchat-deadbeef/blob/master/TODO.m
 
 You are welcome to modify the script and add some new features!
 
-To contribute, please fork the project, make your changes on branch, then submit a Pull Request. 
+To contribute, please fork the project, make your changes on a branch, then submit a Pull Request. 
 
 Clear and accurate descriptions of changes are a must.
 

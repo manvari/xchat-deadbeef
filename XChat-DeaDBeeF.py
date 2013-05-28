@@ -58,9 +58,13 @@ def execute_deadbeef():
 		pass
 
 def call_deadbeef_user(word, word_eol, userdata):
-	print "DeadBeeF launched!"
-	calldb_user_thread = Thread(target=execute_deadbeef)
-	calldb_user_thread.start()
+	runningornot = os.popen("ps -e | grep deadbeef-main").read()
+	if len(runningornot) == 0:
+		print "DeadBeeF launched!"
+		calldb_user_thread = Thread(target=execute_deadbeef)
+		calldb_user_thread.start()
+	else:
+		print "DeaDBeeF is already open!"
 	return xchat.EAT_ALL
 	
 def call_deadbeef_script():
@@ -77,58 +81,61 @@ def is_deadbeef_running():
 	else:
 		pass
 			
-def is_song_loaded():
+def is_track_loaded():
 	loadedornot = os.popen("deadbeef --nowplaying %e").read()
 	if "nothing" in loadedornot:
 		print "Track loaded!"
 	else:
 		print "Track resumed/reset!"
 
-def deadbeef_current_song(word, word_eol, userdata):
+def deadbeef_current_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	read_song = os.popen('deadbeef --nowplaying "%a - %t - %b% (%y) // %@:BITRATE@kbps"').read().strip()
+	read_track = os.popen('deadbeef --nowplaying "%a - %t - %b% (%y) // %@:BITRATE@kbps"').read().strip()
 	nickname = "♪ NP @ %s ♪ - " % xchat.get_info("nick")
-	announce_song = nickname + str(read_song)
-	xchat.command("say "+announce_song)
+	announce_track = nickname + str(read_track)
+	xchat.command("say "+announce_track)
 	return xchat.EAT_ALL
       
-def deadbeef_next_song(word, word_eol, userdata):
+def deadbeef_next_track(word, word_eol, userdata):
 	is_deadbeef_running()
 	os.system("deadbeef --next")
 	print "Next track loaded!"
 	sleep(0.05) # Give some time to DeaDBeeF to update accurately 
-	read_song = os.popen('deadbeef --nowplaying "%t by %a - from %b (%y)"').read()
-	print "You are listening to: %s" % str(read_song)
+	read_track = os.popen('deadbeef --nowplaying "%t by %a - from %b (%y)"').read()
+	print "You are listening to: %s" % str(read_track)
 	return xchat.EAT_ALL
  
-def deadbeef_previous_song(word, word_eol, userdata):
+def deadbeef_previous_track(word, word_eol, userdata):
 	is_deadbeef_running()
 	os.system("deadbeef --prev")
 	print "Previous track loaded!"
 	sleep(0.05) # Give some time to DeaDBeeF to update accurately 
-	read_song = os.popen('deadbeef --nowplaying "%t by %a - from %b% (%y)"').read()
-	print "You are listening to: %s" % str(read_song)
+	read_track = os.popen('deadbeef --nowplaying "%t by %a - from %b% (%y)"').read()
+	print "You are listening to: %s" % str(read_track)
 	return xchat.EAT_ALL
  
-def deadbeef_play_song(word, word_eol, userdata):
+def deadbeef_play_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	is_song_loaded()
+	is_track_loaded()
 	os.system("deadbeef --play")
 	return xchat.EAT_ALL
  
-def deadbeef_pause_song(word, word_eol, userdata):
+def deadbeef_pause_track(word, word_eol, userdata):
 	is_deadbeef_running()
 	os.system("deadbeef --pause")
 	print "Current track paused!"
 	return xchat.EAT_ALL
 	
-def deadbeef_stop_song(word, word_eol, userdata):
+def deadbeef_stop_track(word, word_eol, userdata):
 	is_deadbeef_running()
 	os.system("deadbeef --stop")
 	print "Current track stopped!"
 	return xchat.EAT_ALL
 	
 if __name__ == '__main__':
+	
+	print "XChat-DeaDBeeF %s plugin loaded successfully! - by %s" % (__module_version__,__module_author__)
+	print "Protip: using /play when the track is playing resets the track."
 	
 	is_deadbeef_running() #=> call_deadbeef_script in new thread => execute_deadbeef() in the same thread.
 	check_deadbeef_version()
@@ -138,18 +145,15 @@ if __name__ == '__main__':
 	xchat.hook_command('deadbeef',call_deadbeef_user) #=>  execute_deadbeef() in a new thread.
     
 #Display the current track (chose one)
-	#xchat.hook_command('currentsong',deadbeef_current_song) 
-	#xchat.hook_command('nowplaying',deadbeef_current_song)
-	xchat.hook_command('np',deadbeef_current_song)
+	#xchat.hook_command('currenttrack',deadbeef_current_track) 
+	#xchat.hook_command('nowplaying',deadbeef_current_track)
+	xchat.hook_command('np',deadbeef_current_track)
 
 #Play, pause, stop track
-	xchat.hook_command('playsong',deadbeef_play_song)
-	xchat.hook_command('pausesong',deadbeef_pause_song)
-	xchat.hook_command('stopsong',deadbeef_stop_song)
+	xchat.hook_command('dbplay',deadbeef_play_track)
+	xchat.hook_command('dbpause',deadbeef_pause_track)
+	xchat.hook_command('dbstop',deadbeef_stop_track)
 	
-#Skip to next or previous song	
-	xchat.hook_command('nextsong',deadbeef_next_song)
-	xchat.hook_command('prevsong',deadbeef_previous_song)
-	
-	print "XChat-DeaDBeeF %s plugin loaded successfully! - by %s" % (__module_version__,__module_author__)
-	print "Protip: using /playsong when the track is playing resets the track."
+#Skip to next or previous track
+	xchat.hook_command('dbnext',deadbeef_next_track)
+	xchat.hook_command('dbprev',deadbeef_previous_track)

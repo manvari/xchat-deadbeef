@@ -33,8 +33,7 @@ __module_email__ = "nerorush23@gmail.com"
 __module_status__ = "Released"
 
 ############################
-import xchat                 
-import os                    
+import xchat              
 import subprocess            
 
 from threading import Thread 

@@ -9,7 +9,7 @@ XChat-DeaDBeeF implements a few commands that can be typed into the text box at 
 Commands:
 
 * **/deadbeef** - launches DeaDBeeF
-* **/np** - displays current track in channel
+* **/np**, **/tellnp** - displays current track / say current track in channel
 * **/dbplay** - loads track or resumes playback (if paused)
 * **/dbpause** - pauses current track
 * **/dbnext**, **/dbprev** - loads next/previous track in playlist

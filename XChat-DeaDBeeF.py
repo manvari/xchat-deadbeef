@@ -42,29 +42,39 @@ from time import sleep
 ############################
 
 def check_deadbeef_version():
-	read_version = os.popen('deadbeef --version').read()
-	if __module_deadbeef_version__ in read_version:
+	read_version = subprocess.Popen('deadbeef --version',shell=True,stdout=subprocess.PIPE)
+	read_version_out = read_version.communicate()[0]
+	if __module_deadbeef_version__ in read_version_out:
 		pass
 	else:
 		print "Your DeaDBeeF version is outdated.\nPlease update to DeaDBeeF %s!" % __module_deadbeef_version__
 		
 def execute_deadbeef():
-	calldb = subprocess.Popen("deadbeef", stdout=subprocess.PIPE)
+	calldb = subprocess.Popen("deadbeef", shell=True, stdout=subprocess.PIPE)
 	calldb.communicate()[0]
 	exitcode = calldb.poll()
 	if exitcode == 0:
 		print "DeaDBeeF closed!"
 	else:
 		pass
+		
+def exit_deadbeef_user(word, word_eol, userdata):
+	exit_deadbeef = subprocess.Popen('killall deadbeef-main',shell=True,stdout=subprocess.PIPE)
+	exit_deadbeef.communicate()[0]
+	print "DeaDBeeF closed!"
+	
+	return xchat.EAT_ALL
 
 def call_deadbeef_user(word, word_eol, userdata):
-	runningornot = os.popen("ps -e | grep deadbeef-main").read()
-	if len(runningornot) == 0:
+	runningornot = subprocess.Popen('ps -e | grep "deadbeef-main"',shell=True,stdout=subprocess.PIPE)
+	runningornot_out = runningornot.communicate()[0]
+	if len(runningornot_out) == 0:
 		print "DeadBeeF launched!"
 		calldb_user_thread = Thread(target=execute_deadbeef)
 		calldb_user_thread.start()
 	else:
 		print "DeaDBeeF is already open!"
+		
 	return xchat.EAT_ALL
 	
 def call_deadbeef_script():
@@ -73,8 +83,9 @@ def call_deadbeef_script():
 	execute_deadbeef()
 
 def is_deadbeef_running(): 
-	runningornot = os.popen("ps -e | grep deadbeef-main").read()
-	if len(runningornot) == 0:
+	runningornot = subprocess.Popen('ps -e | grep "deadbeef-main"',shell=True,stdout=subprocess.PIPE)
+	runningornot_out = runningornot.communicate()[0]
+	if len(runningornot_out) == 0:
 		print "DeaDBeeF is not running. Launching in 5s..."
 		call_deadbeef_thread = Thread(target=call_deadbeef_script)
 		call_deadbeef_thread.start()
@@ -82,54 +93,67 @@ def is_deadbeef_running():
 		pass
 			
 def is_track_loaded():
-	loadedornot = os.popen("deadbeef --nowplaying %e").read()
-	if "nothing" in loadedornot:
+	loadedornot = subprocess.Popen("deadbeef --nowplaying %e",shell=True,stdout=subprocess.PIPE)
+	loadedornot_out = loadedornot.communicate()[0]
+	if "nothing" in loadedornot_out:
 		print "Track loaded!"
 	else:
 		print "Track resumed/reset!"
 
 def deadbeef_current_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	read_track = os.popen('deadbeef --nowplaying "%a - %t - %b% (%y) // %@:BITRATE@kbps"').read().strip()
+	read_track = subprocess.Popen('deadbeef --nowplaying "%a - %t - %b% (%y) // %@:BITRATE@kbps"',shell=True,stdout=subprocess.PIPE)
+	read_track_out = read_track.communicate()[0]
 	nickname = "♪ NP @ %s ♪ - " % xchat.get_info("nick")
-	announce_track = nickname + str(read_track)
+	announce_track = nickname + str(read_track_out).strip('\n')
 	xchat.command("say "+announce_track)
+	
 	return xchat.EAT_ALL
       
 def deadbeef_next_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	os.system("deadbeef --next")
+	next_track = subprocess.Popen("deadbeef --next",shell=True,stdout=subprocess.PIPE)
+	next_track.communicate()[0]
 	print "Next track loaded!"
-	sleep(0.05) # Give some time to DeaDBeeF to update accurately 
-	read_track = os.popen('deadbeef --nowplaying "%t by %a - from %b (%y)"').read()
-	print "You are listening to: %s" % str(read_track)
+	sleep(0.05) # Give some time to DeaDBeeF to update accurately
+	read_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y)"',shell=True,stdout=subprocess.PIPE)
+	read_track_out = read_track.communicate()[0]
+	print "You are listening to: %s" % str(read_track_out)
+	
 	return xchat.EAT_ALL
  
 def deadbeef_previous_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	os.system("deadbeef --prev")
+	prev_track = subprocess.Popen("deadbeef --prev",shell=True,stdout=subprocess.PIPE)
+	prev_track.communicate()[0]
 	print "Previous track loaded!"
 	sleep(0.05) # Give some time to DeaDBeeF to update accurately 
-	read_track = os.popen('deadbeef --nowplaying "%t by %a - from %b% (%y)"').read()
-	print "You are listening to: %s" % str(read_track)
+	read_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y)"',shell=True,stdout=subprocess.PIPE)
+	read_track_out = read_track.communicate()[0]
+	print "You are listening to: %s" % str(read_track_out)
 	return xchat.EAT_ALL
  
 def deadbeef_play_track(word, word_eol, userdata):
 	is_deadbeef_running()
 	is_track_loaded()
-	os.system("deadbeef --play")
+	play_track = subprocess.Popen("deadbeef --play",shell=True,stdout=subprocess.PIPE)
+	play_track.communicate()[0]
 	return xchat.EAT_ALL
  
 def deadbeef_pause_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	os.system("deadbeef --pause")
+	pause_track = subprocess.Popen("deadbeef --pause",shell=True,stdout=subprocess.PIPE)
+	pause_track.communicate()[0]
 	print "Current track paused!"
+	
 	return xchat.EAT_ALL
 	
 def deadbeef_stop_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	os.system("deadbeef --stop")
+	stop_track = subprocess.Popen("deadbeef --stop",shell=True,stdout=subprocess.PIPE)
+	stop_track.communicate()[0]
 	print "Current track stopped!"
+	
 	return xchat.EAT_ALL
 	
 if __name__ == '__main__':
@@ -137,11 +161,12 @@ if __name__ == '__main__':
 	print "XChat-DeaDBeeF %s plugin loaded successfully! - by %s" % (__module_version__,__module_author__)
 	print "Protip: using /dbplay when the track is playing resets the track."
 	
-	is_deadbeef_running() #=> call_deadbeef_script in new thread => execute_deadbeef() in the same thread.
+	is_deadbeef_running() #=> call_deadbeef_script() in new thread => execute_deadbeef() in the same thread.
 	check_deadbeef_version()
 
-#Launch DeaDBeeF
+#Launch/close DeaDBeeF
 	xchat.hook_command('deadbeef',call_deadbeef_user) #=>  execute_deadbeef() in a new thread.
+	xchat.hook_command('dbexit',exit_deadbeef_user) 
     
 #Display the current track (chose one)
 	#xchat.hook_command('currenttrack',deadbeef_current_track) 

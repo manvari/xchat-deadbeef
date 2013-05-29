@@ -101,13 +101,13 @@ def is_track_loaded():
 
 def show_track_info_script():
 	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y)"',shell=True,stdout=subprocess.PIPE)
-	show_track_out = read_track.communicate()[0]
-	print "You are listening to: %s" % str(read_track_out)
+	show_track_out = show_track.communicate()[0]
+	print "You are listening to: %s" % str(show_track_out)
 
 def show_track_info_user(word, word_eol, userdata):
-	read_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y) // %@:BITRATE@kbps"',shell=True,stdout=subprocess.PIPE)
-	read_track_out = read_track.communicate()[0]
-	print "You are listening to: %s" % str(read_track_out)
+	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y) // %@:BITRATE@kbps"',shell=True,stdout=subprocess.PIPE)
+	show_track_out = show_track.communicate()[0]
+	print "You are listening to: %s" % str(show_track_out)
 	
 	return xchat.EAT_ALL
 	
@@ -127,9 +127,7 @@ def deadbeef_next_track(word, word_eol, userdata):
 	next_track.communicate()[0]
 	print "Next track loaded!"
 	sleep(0.05) # Give some time to DeaDBeeF to update accurately
-	read_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y)"',shell=True,stdout=subprocess.PIPE)
-	read_track_out = read_track.communicate()[0]
-	print "You are listening to: %s" % str(read_track_out)
+	show_track_info_script()
 	
 	return xchat.EAT_ALL
  

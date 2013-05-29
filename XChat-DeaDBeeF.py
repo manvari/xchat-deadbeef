@@ -166,9 +166,14 @@ def deadbeef_stop_track(word, word_eol, userdata):
 	
 	return xchat.EAT_ALL
 	
+def unload(userdata):
+	print "XChat-DeaDBeeF %s unloaded!" % (__module_version__)
+	
+	return xchat.EAT_ALL
+	
 if __name__ == '__main__':
 	
-	print "XChat-DeaDBeeF %s plugin loaded successfully! - by %s" % (__module_version__,__module_author__)
+	print "XChat-DeaDBeeF %s loaded successfully! - by %s" % (__module_version__,__module_author__)
 	print "Protip: using /dbplay when the track is playing resets the track."
 	
 	is_deadbeef_running() #=> call_deadbeef_script() in new thread => execute_deadbeef() in the same thread.
@@ -192,3 +197,7 @@ if __name__ == '__main__':
 #Skip to next or previous track
 	xchat.hook_command('dbnext',deadbeef_next_track)
 	xchat.hook_command('dbprev',deadbeef_previous_track)
+	
+#Unload XChat-DeaDBeeF
+	xchat.hook_unload(unload)
+  

@@ -22,7 +22,7 @@
 
 __module_name__ = "XChat-DeaDBeeF"
 __module_description__ = "DeaDBeeF integration in XChat and HexChat."
-__module_version__ = "0.3"
+__module_version__ = "1.0"
 __module_deadbeef_version__ = "0.5.6"
 
 __module_author__ = "Trixar_za & iceTwy"

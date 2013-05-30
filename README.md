@@ -14,6 +14,7 @@ Commands:
 * **/dbpause** - pauses current track
 * **/dbnext**, **/dbprev** - loads next/previous track in playlist
 * **/dbstop** - stops current track
+* **/dbexit** - closes DeaDBeeF
 
 ### Requirements
 

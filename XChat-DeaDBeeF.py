@@ -25,8 +25,8 @@ __module_description__ = "DeaDBeeF integration in XChat and HexChat."
 __module_version__ = "1.0"
 __module_deadbeef_version__ = "0.5.6"
 
-__module_author__ = "Trixar_za & iceTwy"
-__module_credits__ = ["Trixar_za", "iceTwy"]
+__module_author__ = "iceTwy"
+__module_credits__ = ["iceTwy", "Trixar_za"]
 __module_license__ = "WTFPL"
 __module_maintainer__ = "iceTwy"
 __module_email__ = "nerorush23@gmail.com"
@@ -154,7 +154,9 @@ def deadbeef_pause_track(word, word_eol, userdata):
 	is_deadbeef_running()
 	pause_track = subprocess.Popen("deadbeef --pause",shell=True,stdout=subprocess.PIPE)
 	pause_track.communicate()[0]
-	print "Current track paused!"
+	track_playing_time = subprocess.Popen("deadbeef --nowplaying '(%e/%l)'",shell=True,stdout=subprocess.PIPE)
+	track_playing_time_out = track_playing_time.communicate()[0]
+	print "Current track paused! %s" % track_playing_time_out
 	
 	return xchat.EAT_ALL
 	

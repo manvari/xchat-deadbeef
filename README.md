@@ -24,7 +24,7 @@ Obvious programs are required:
 * [DeaDBeeF 0.5.x](http://deadbeef.sourceforge.net/download.html "DeaDBeeF - Ultimate Music Player For GNU/Linux")
 * [XChat](http://sourceforge.net/projects/xchat/files/ "X-Chat - Browse Files at SourceForge.net") or [HexChat](http://hexchat.org/downloads.html "Downloads - HexChat") for Linux
 
-_Note: XChat is no longer being actively developed. HexChat, one of its fork, is now the main project and receives regular updates._
+_Note: XChat is no longer being actively developed. HexChat, one of its forks, is now the main project and receives regular updates._
 
 Your distribution should propose packages for all of those programs; install them normally with your package manager.
 

@@ -20,8 +20,7 @@ Commands:
 
 ### Requirements
 
-XChat-DeaDBeeF only needs the bare minimum to run. However, you'll have to check the version of the Python scripting interface that came
-with your XChat/HexChat package. XChat should have the Python 2 scripting interface, but newer HexChat packages (including those from Arch Linux) include the Python 3 one.
+XChat-DeaDBeeF only needs the bare minimum to run. However, you'll have to check the version of the Python scripting interface that came with your XChat/HexChat package. XChat should have the Python 2 scripting interface, but newer HexChat packages (including those from Arch Linux) include the Python 3 one.
 
 On the top-bar menu, navigate to _Window > Plugins and Scripts... > Load... > /path/to/XChat-DeaDBeeF.py_, and see whether it indicates Python 2 or 3. Depending on the version, download:
 
@@ -54,10 +53,6 @@ Installing XChat-DeaDBeeF is pretty straightforward.
 XChat-DeaDBeeF will now be automatically loaded upon launching XChat/HexChat.
 
 _Note: if necessary, XChat-DeaDBeeF can also be (re)loaded via Window > Plugins and Scripts... > Load... > /path/to/XChat-DeaDBeeF.py._
-
-### To-Do list
-
-Refer to [this page](https://github.com/iceTwy/xchat-deadbeef/blob/master/TODO.md "TO-DO List").
 
 ### Contribution
 

@@ -10,17 +10,26 @@ Commands:
 
 * **/deadbeef** - launches DeaDBeeF
 * **/np**, **/tellnp** - displays current track / says current track in channel
-* **/dbplay** - loads track or resumes playback (if paused)
+* **/dbplay** - resumes playback if track is paused, plays the selected song* if a track is already playing
 * **/dbpause** - pauses current track
 * **/dbnext**, **/dbprev** - loads next/previous track in playlist
 * **/dbstop** - stops current track
 * **/dbexit** - closes DeaDBeeF
 
+**N.B.**: the selected song is the one that is currently highlighted/clicked on in DeadBeeF.
+
 ### Requirements
 
-Obvious programs are required:
+XChat-DeaDBeeF only needs the bare minimum to run. However, you'll have to check the version of the Python scripting interface that came
+with your XChat/HexChat package. XChat should have the Python 2 scripting interface, but newer HexChat packages (including those from Arch Linux) include the Python 3 one.
 
+On the top-bar menu, navigate to _Window > Plugins and Scripts... > Load... > /path/to/XChat-DeaDBeeF.py_, and see whether it indicates Python 2 or 3. Depending on the version, download:
+
+* [Python 3.3.x](http://www.python.org/getit/ "Download Python") (older 3.x versions are not supported by HexChat)
 * [Python 2.7.x](http://www.python.org/getit/ "Download Python") (or 2.6.x)
+
+And, obviously, you'll need:
+
 * [DeaDBeeF 0.5.x](http://deadbeef.sourceforge.net/download.html "DeaDBeeF - Ultimate Music Player For GNU/Linux")
 * [XChat](http://sourceforge.net/projects/xchat/files/ "X-Chat - Browse Files at SourceForge.net") or [HexChat](http://hexchat.org/downloads.html "Downloads - HexChat") for Linux
 
@@ -44,7 +53,7 @@ Installing XChat-DeaDBeeF is pretty straightforward.
 
 XChat-DeaDBeeF will now be automatically loaded upon launching XChat/HexChat.
 
-_Note: if necessary, XChat-DeaDBeeF can also be (re)loaded via Window > Plugins and scripts... > Load... > /path/to/XChat-DeaDBeeF.py._
+_Note: if necessary, XChat-DeaDBeeF can also be (re)loaded via Window > Plugins and Scripts... > Load... > /path/to/XChat-DeaDBeeF.py._
 
 ### To-Do list
 
@@ -64,7 +73,7 @@ Clear and accurate descriptions of changes are a must.
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
 
- Copyright (C) 2013 iceTwy <nerorush23@gmail.com>
+ Copyright (C) 2013 iceTwy <icetwy@icetwy.re>
 
  Everyone is permitted to copy and distribute verbatim or modified
  copies of this license document, and changing it is allowed as long

@@ -77,13 +77,13 @@ def show_track_info_script():
 	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a"',shell=True,stdout=subprocess.PIPE)
 	show_track_out = show_track.communicate()[0]
 	decode_show_track_out = str(show_track_out, encoding='utf8')
-	print("You are listening to: %s" % str(decode_show_track_out))
+	print("You're listening to: %s" % str(decode_show_track_out))
 
 def show_track_info_user(word, word_eol, userdata):
 	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a // %@:BITRATE@kbps"',shell=True,stdout=subprocess.PIPE)
 	show_track_out = show_track.communicate()[0]
 	decode_show_track_out = str(show_track_out, encoding='utf8')
-	print("You are listening to: %s" % str(decode_show_track_out))
+	print("You're listening to: %s" % str(decode_show_track_out))
 	
 	return xchat.EAT_ALL
 	

@@ -12,7 +12,6 @@ __module_name__ = "XChat-DeaDBeeF"
 __module_author__ = "iceTwy"
 __module_description__ = "DeaDBeeF integration in XChat and HexChat."
 __module_version__ = "1.0"
-__module_deadbeef_version__ = "0.5.6"
 
 ############################
 import xchat              
@@ -22,14 +21,7 @@ from threading import Thread
 from time import sleep      
 ############################
 
-def check_deadbeef_version():
-	read_version = subprocess.Popen('deadbeef --version',shell=True,stdout=subprocess.PIPE)
-	read_version_out = read_version.communicate()[0]
-	if __module_deadbeef_version__ in read_version_out:
-		pass
-	else:
-		print "Your DeaDBeeF version is outdated.\nPlease update to DeaDBeeF %s!" % __module_deadbeef_version__
-		
+	
 def execute_deadbeef():
 	calldb = subprocess.Popen("deadbeef", shell=True, stdout=subprocess.PIPE)
 	calldb.communicate()[0]
@@ -162,7 +154,6 @@ if __name__ == '__main__':
 	print "Protip: using /dbplay when the track is playing resets the track."
 	
 	is_deadbeef_running() #=> call_deadbeef_script() in new thread => execute_deadbeef() in the same thread.
-	check_deadbeef_version()
 
 #Launch/close DeaDBeeF
 	xchat.hook_command('deadbeef',call_deadbeef_user) #=>  execute_deadbeef() in a new thread.

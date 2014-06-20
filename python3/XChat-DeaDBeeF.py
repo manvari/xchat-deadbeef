@@ -74,13 +74,13 @@ def is_track_loaded():
 		print("Track resumed/reset!")
 
 def show_track_info_script():
-	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y)"',shell=True,stdout=subprocess.PIPE)
+	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a"',shell=True,stdout=subprocess.PIPE)
 	show_track_out = show_track.communicate()[0]
 	decode_show_track_out = str(show_track_out, encoding='utf8')
 	print("You are listening to: %s" % str(decode_show_track_out))
 
 def show_track_info_user(word, word_eol, userdata):
-	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y) // %@:BITRATE@kbps"',shell=True,stdout=subprocess.PIPE)
+	show_track = subprocess.Popen('deadbeef --nowplaying "%t by %a // %@:BITRATE@kbps"',shell=True,stdout=subprocess.PIPE)
 	show_track_out = show_track.communicate()[0]
 	decode_show_track_out = str(show_track_out, encoding='utf8')
 	print("You are listening to: %s" % str(decode_show_track_out))
@@ -89,11 +89,10 @@ def show_track_info_user(word, word_eol, userdata):
 	
 def deadbeef_current_track(word, word_eol, userdata):
 	is_deadbeef_running()
-	read_track = subprocess.Popen('deadbeef --nowplaying "%t by %a - from %b (%y)"',shell=True,stdout=subprocess.PIPE)
+	read_track = subprocess.Popen('deadbeef --nowplaying "%t by %a"',shell=True,stdout=subprocess.PIPE)
 	read_track_out = read_track.communicate()[0]
 	decode_read_track_out = str(read_track_out, encoding='utf8')
-	nickname = "♪ NP @ %s ♪ - " % xchat.get_info("nick")
-	announce_track = nickname + str(decode_read_track_out).strip('\n')
+	announce_track = str(decode_read_track_out).strip('\n')
 	xchat.command("say "+announce_track)
 	
 	return xchat.EAT_ALL
@@ -164,10 +163,8 @@ if __name__ == '__main__':
 	xchat.hook_command('dbexit',exit_deadbeef_user) 
     
 #Display the current track (chose one)
-	#xchat.hook_command('currenttrack',deadbeef_current_track) 
-	#xchat.hook_command('nowplaying',deadbeef_current_track)
-	xchat.hook_command('np',show_track_info_user)
-	xchat.hook_command('tellnp',deadbeef_current_track)
+	xchat.hook_command('dbshow',show_track_info_user)
+	xchat.hook_command('np',deadbeef_current_track)
 	
 #Play, pause, stop track
 	xchat.hook_command('dbplay',deadbeef_play_track)

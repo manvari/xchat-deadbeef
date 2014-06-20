@@ -9,7 +9,7 @@ XChat-DeaDBeeF implements a few commands that can be typed into the text box at 
 Commands:
 
 * **/deadbeef** - launches DeaDBeeF
-* **/np**, **/tellnp** - displays current track / says current track in channel
+* **/dbshow**, **/np** - displays current track / says current track in channel
 * **/dbplay** - resumes playback if track is paused, plays the selected song* if a track is already playing
 * **/dbpause** - pauses current track
 * **/dbnext**, **/dbprev** - loads next/previous track in playlist
@@ -29,7 +29,7 @@ On the top-bar menu, navigate to _Window > Plugins and Scripts... > Load... > /p
 
 And, obviously, you'll need:
 
-* [DeaDBeeF 0.5.x](http://deadbeef.sourceforge.net/download.html "DeaDBeeF - Ultimate Music Player For GNU/Linux")
+* [DeaDBeeF 0.5.x](http://deadbeef.sourceforge.net/download.html "DeaDBeeF - Ultimate Music Player For GNU/Linux") or up
 * [XChat](http://sourceforge.net/projects/xchat/files/ "X-Chat - Browse Files at SourceForge.net") or [HexChat](http://hexchat.org/downloads.html "Downloads - HexChat") for Linux
 
 _Note: XChat is no longer being actively developed. HexChat, one of its forks, is now the main project and receives regular updates._

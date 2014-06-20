@@ -89,7 +89,7 @@ def deadbeef_current_track(word, word_eol, userdata):
 	read_track = subprocess.Popen('deadbeef --nowplaying "%t by %a"',shell=True,stdout=subprocess.PIPE)
 	read_track_out = read_track.communicate()[0]
 	announce_track = str(read_track_out).strip('\n')
-	xchat.command("say "+announce_track)
+	xchat.command("me is listening to: "+announce_track)
 	
 	return xchat.EAT_ALL
       

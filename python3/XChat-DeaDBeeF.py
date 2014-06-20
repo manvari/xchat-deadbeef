@@ -93,7 +93,7 @@ def deadbeef_current_track(word, word_eol, userdata):
 	read_track_out = read_track.communicate()[0]
 	decode_read_track_out = str(read_track_out, encoding='utf8')
 	announce_track = str(decode_read_track_out).strip('\n')
-	xchat.command("say "+announce_track)
+	xchat.command("me is listening to: "+announce_track)
 	
 	return xchat.EAT_ALL
       

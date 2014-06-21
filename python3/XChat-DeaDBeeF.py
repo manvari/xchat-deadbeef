@@ -104,7 +104,7 @@ def db_play_track(word, word_eol, userdata):
 
 def db_pause_track(word, word_eol, userdata):
     is_db_running()
-    pause_track = subprocess.call(["deadbeef", "--pause"],shell=True,stdout=subprocess.PIPE)
+    pause_track = subprocess.call(["deadbeef", "--pause"])
     track_time = subprocess.check_output(["deadbeef", "--nowplaying", "%e/%l"])
     print("Current track paused at {}.".format(str(track_time, encoding='utf8')))
 

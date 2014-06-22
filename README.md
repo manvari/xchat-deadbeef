@@ -9,8 +9,7 @@ XChat-DeaDBeeF implements a few commands that can be typed into the text box at 
 Commands:
 
 * **/deadbeef** - launches DeaDBeeF
-, **/np** - displays the current track in channel
-* **/dbshow** - displays the current track to you
+* **/dbshow**, **/np** - displays current track / says current track in channel
 * **/dbplay** - resumes playback if track is paused, plays the selected song* if a track is already playing
 * **/dbpause** - pauses current track
 * **/dbnext**, **/dbprev** - loads next/previous track in playlist
@@ -25,8 +24,8 @@ XChat-DeaDBeeF only needs the bare minimum to run. However, you'll have to check
 
 On the top-bar menu, navigate to _Window > Plugins and Scripts... > Load... > /path/to/XChat-DeaDBeeF.py_, and see whether it indicates Python 2 or 3. Depending on the version, download:
 
-* [Python 2.6.x](http://www.python.org/getit/ "Download Python") and up
-* [Python 3.3.x](http://www.python.org/getit/ "Download Python") (older versions of 3.x versions aren't supported by HexChat)
+* [Python 3.3.x](http://www.python.org/getit/ "Download Python") (older 3.x versions are not supported by HexChat)
+* [Python 2.7.x](http://www.python.org/getit/ "Download Python") (or 2.6.x)
 
 And, obviously, you'll need:
 

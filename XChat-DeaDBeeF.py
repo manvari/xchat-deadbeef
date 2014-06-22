@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-#  XChat-DeaDBeeF  -  XChat/HexChat script for DeaDBeeF integration
-#  Python 3 version
+#  XChat-DeaDBeeF - XChat/HexChat script for DeaDBeeF integration
+#  Python 2/3 version
 #
 #  Unless indicated otherwise, files from the XChat-DeaDBeeF project
 #  are licensed under the WTFPL version 2. Full license information
@@ -145,4 +145,3 @@ if __name__ == '__main__':
 
     #Unload XChat-DeaDBeeF
     xchat.hook_unload(unload)
-

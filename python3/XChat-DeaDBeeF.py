@@ -11,7 +11,7 @@
 __module_name__ = "XChat-DeaDBeeF"
 __module_author__ = "iceTwy"
 __module_description__ = "DeaDBeeF integration in XChat and HexChat."
-__module_version__ = "1.0"
+__module_version__ = "1.0.1"
 
 import xchat
 import subprocess

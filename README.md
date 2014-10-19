@@ -64,4 +64,4 @@ Clear and accurate descriptions of changes are a must.
 
 ### License
 
-XChat-DeaDBeeF is licensed under the MIT license. Refer to LICENSE.txt for further information.
+XChat-DeaDBeeF is licensed under the WTFPL v2 license. Refer to LICENSE.txt for further information.
